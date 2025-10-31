@@ -30,7 +30,7 @@ class Rq(
         return paramMap[key]
     }
 
-    fun getIntParamValueAsInt(key:String, defaultValue:Int): Int {
+    fun getParamValueAsInt(key:String, defaultValue:Int): Int {
         return getParamValue(key)
             ?.toIntOrNull()
             ?: defaultValue
