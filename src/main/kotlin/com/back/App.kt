@@ -10,8 +10,9 @@ class App {
         while (true) {
             print("명언) ")
             val input = readln().trim()
+            val rq: Rq = Rq(input)
 
-            when (input) {
+            when (rq.action) {
                 "종료" -> {
                     break
                 }
@@ -36,6 +37,11 @@ class App {
                     wiseSayings.reversed().forEach {
                         println("${it.id} / ${it.author} / ${it.content}")
                     }
+                }
+
+                "삭제" -> {
+                    val id = rq.getParamValue("id")
+                    println("${id}")
                 }
             }
         }
