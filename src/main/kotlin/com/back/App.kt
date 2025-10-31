@@ -40,7 +40,11 @@ class App {
                 }
 
                 "삭제" -> {
-                    val id = rq.getParamValue("id")
+                    val id = rq.getIntParamValueAsInt("id", 0)
+                    if(id == 0) {
+                        println("id를 정확히 입력해주세요.")
+                        continue
+                    }
                     println("${id}")
                 }
             }
