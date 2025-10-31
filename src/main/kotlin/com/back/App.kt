@@ -45,7 +45,11 @@ class App {
                         println("id를 정확히 입력해주세요.")
                         continue
                     }
-                    println("${id}")
+                    wiseSayings.removeIf {
+                        it.id == id
+                    }
+
+                    println("${id}번 명언이 삭제되었습니다.")
                 }
             }
         }
